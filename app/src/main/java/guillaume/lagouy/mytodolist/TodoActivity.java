@@ -39,21 +39,14 @@ public class TodoActivity extends Activity implements View.OnClickListener{
             Button b = (Button)v;
             if(b == btnValider){
                 Toast.makeText(getApplicationContext(),"Validate", Toast.LENGTH_SHORT).show();
-                Editable item_text = editText.getText();
-                textView.append(item_text+"\n");
+                String item_text = editText.getText().toString();
+                ListItem.getElements().add(item_text);
 
             }
             else if(b == btnVider){
                 Toast.makeText(getApplicationContext(),"Empty list", Toast.LENGTH_SHORT).show();
                 textView.setText("");
             }
-        }
-    }
-
-    public static final class Singleton{
-        private static volatile Singleton instance = null;
-        private Singleton(){
-            super();
         }
     }
 }
